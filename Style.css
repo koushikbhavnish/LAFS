@@ -1,0 +1,499 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f8f8f8;
+    color: #222;
+}
+
+/* Navbar */
+
+header {
+    height: 70px;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 8%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #fc8019;
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+}
+
+nav a:hover {
+    color: #fc8019;
+}
+
+.login-btn {
+    padding: 10px 22px;
+    border: none;
+    background: #fc8019;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* Hero Section */
+
+.hero {
+    min-height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: #fff4eb;
+}
+
+.hero-content {
+    max-width: 750px;
+}
+
+.hero h1 {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+/* Search */
+
+.search-box {
+    display: flex;
+    justify-content: center;
+}
+
+.search-box input {
+    width: 450px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px 0 0 6px;
+    font-size: 16px;
+    outline: none;
+}
+
+.search-box button {
+    padding: 15px 25px;
+    border: none;
+    background: #fc8019;
+    color: white;
+    font-size: 16px;
+    border-radius: 0 6px 6px 0;
+    cursor: pointer;
+}
+
+/* Restaurants */
+
+.restaurants {
+    padding: 50px 8%;
+}
+
+.restaurants h2 {
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+.restaurant-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.restaurant-card {
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+    transition: 0.3s;
+}
+
+.restaurant-card:hover {
+    transform: translateY(-5px);
+}
+
+.food-image {
+    height: 150px;
+    background: #f1f1f1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 70px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.restaurant-card h3 {
+    margin-bottom: 8px;
+}
+
+.restaurant-card p {
+    color: #666;
+    margin-bottom: 8px;
+}
+
+.restaurant-card span {
+    font-size: 14px;
+}
+
+/* Footer */
+
+footer {
+    text-align: center;
+    background: #222;
+    color: white;
+    padding: 25px;
+    margin-top: 30px;
+}
+@media (max-width: 900px) {
+    .restaurant-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .restaurant-container {
+        grid-template-columns: 1fr;
+    }
+}
+const restaurantCards = document.querySelectorAll(".restaurant-card");
+
+restaurantCards.forEach(function(card) {
+
+    card.addEventListener("click", function() {
+
+        const restaurantName = card.querySelector("h3").textContent;
+
+        alert("You selected " + restaurantName);
+
+    });
+
+});
+/* Login Page */
+
+.login-page {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff4eb;
+}
+
+.login-box {
+    width: 400px;
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.12);
+    text-align: center;
+}
+
+.login-logo {
+    font-size: 35px;
+    font-weight: bold;
+    color: #fc8019;
+    margin-bottom: 15px;
+}
+
+.login-box h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.login-box > p {
+    color: #666;
+    margin-bottom: 25px;
+}
+
+.login-box form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.login-box input {
+    padding: 14px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 15px;
+    outline: none;
+}
+
+.login-box input:focus {
+    border-color: #fc8019;
+}
+
+.login-box button {
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    background: #fc8019;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.login-box button:hover {
+    background: #fff4eb;
+}
+
+.signup-text {
+    margin-top: 20px;
+}
+
+.signup-text a {
+    color: #fc8019;
+    text-decoration: none;
+    font-weight: bold;
+}
+.login-page {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff4eb;
+}
+
+.login-box {
+    width: 400px;
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.12);
+    text-align: center;
+}
+/* Floating Food Emojis */
+
+.login-page {
+    position: relative;
+    overflow: hidden;
+}
+
+.food-emoji {
+    position: absolute;
+    font-size: 55px;
+    opacity: 0.8;
+}
+
+.food1 {
+    left: 12%;
+    top: 20%;
+}
+
+.food2 {
+    left: 20%;
+    bottom: 20%;
+}
+
+.food3 {
+    right: 12%;
+    top: 18%;
+}
+
+.food4 {
+    right: 20%;
+    bottom: 25%;
+}
+
+.food5 {
+    left: 8%;
+    top: 55%;
+}
+
+.food6 {
+    right: 8%;
+    top: 55%;
+}
+/* Her Period Comfort Picks */
+
+.comfort-section {
+    padding: 50px 8%;
+    background: #fff4eb;
+}
+
+.comfort-section h2 {
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+.comfort-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.comfort-card {
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+    transition: 0.3s;
+}
+
+.comfort-card:hover {
+    transform: translateY(-5px);
+}
+
+.comfort-image {
+    height: 140px;
+    background: #f1f1f1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 65px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.comfort-card h3 {
+    margin-bottom: 8px;
+}
+
+.comfort-card p {
+    color: #666;
+    margin-bottom: 8px;
+}
+
+.comfort-card strong {
+    color: #fc8019;
+    font-size: 16px;
+}
+
+@media (max-width: 900px) {
+    .comfort-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .comfort-container {
+        grid-template-columns: 1fr;
+    }
+}
+/* Comfort Section Extra Styling */
+
+.comfort-message {
+    color: #666;
+    margin-top: -20px;
+    margin-bottom: 30px;
+}
+
+.comfort-heading {
+    font-size: 22px;
+    margin: 35px 0 20px;
+}
+
+.combo-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.combo-card {
+    background: white;
+    padding: 22px;
+    border-radius: 10px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+    transition: 0.3s;
+}
+
+.combo-card:hover {
+    transform: translateY(-5px);
+}
+
+.combo-card h3 {
+    margin-bottom: 8px;
+}
+
+.combo-card p {
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.combo-card strong {
+    color: #fc8019;
+}
+
+.comfort-offer {
+    margin-top: 35px;
+    padding: 18px;
+    background: white;
+    border-left: 5px solid #fc8019;
+    border-radius: 8px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+}
+
+.comfort-note {
+    margin-top: 20px;
+    color: #777;
+    font-size: 13px;
+    text-align: center;
+}
+
+@media (max-width: 900px) {
+    .combo-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .combo-container {
+        grid-template-columns: 1fr;
+    }
+}
+/* Login Side Image */
+
+.login-page {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    background: #fff4eb;
+    padding: 30px;
+}
+.login-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.login-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+@media (max-width: 900px) {
+    .login-image {
+        display: none;
+    }
+
+    .login-page {
+        padding: 20px;
+    }
+}
